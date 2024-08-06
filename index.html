@@ -24,12 +24,18 @@
   <div class="box">
     <div>扫码赢超级大奖</div>
     <div id="qy-canvas"></div>
+    <img id='imges' src="" alt="">
   </div>
   <script src="./code.js"></script>
   <script>
     var qyCanvas = document.getElementById('qy-canvas');
+    var img = document.getElementById('imges');
     var qyCode = new QRCode(qyCanvas, "https://coderleeee.github.io/m.github.io/");
-    qyCode.draw();
+       qyCode.toDataURL((url)=>{
+        img.src = url
+       })
+       qyCanvas.remove()
+    // qyCode.draw();
   </script>
 
 </body>
